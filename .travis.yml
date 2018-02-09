@@ -2,11 +2,7 @@ language: java
 group: stable
 jdk:
 - oraclejdk8
-script: mvn clean verify
-script: mvn checkstyle:checkstyle
-install:
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
 machine:
   environment:
     CC_TEST_REPORTER_ID: 96ae089d0a21104da1c39f0c0fd272b22a763c132e328a215cd90689f735eee2
@@ -22,3 +18,10 @@ test:
 
   post:
     - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+
+script: mvn clean verify
+script: mvn checkstyle:checkstyle
+install:
+- mvn -N io.takari:maven:wrapper
+- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
