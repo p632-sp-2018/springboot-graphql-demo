@@ -23,5 +23,6 @@ install:
 - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 after_success:
+  - cp target/site/jacoco/jacoco.xml src/main/java/jacoco.xml
   - cd src/main/java/
   - ../../../cc-test-reporter after-build -t jacoco --exit-code $TRAVIS_TEST_RESULT
