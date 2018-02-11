@@ -17,13 +17,11 @@ before_script:
 
 script:
     - mvn clean verify
-    - bash <(curl -s https://codecov.io/bash)
+    
 install:
 - mvn -N io.takari:maven:wrapper
 - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  - cp target/site/jacoco/jacoco.xml src/main/java/jacoco.xml
   - cd src/main/java/
   - ../../../cc-test-reporter after-build -t jacoco --exit-code $TRAVIS_TEST_RESULT
