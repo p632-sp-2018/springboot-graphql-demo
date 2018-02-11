@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +13,9 @@ public class Demo1ApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		
+		assertThat("Test Works")
+	      .isEqualTo("Test Works");
 	}
 
 }
