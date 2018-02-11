@@ -4,4 +4,3 @@ plugins:
     config:
       tests_patterns:
         - src/test/**
-        - app/src/test/**

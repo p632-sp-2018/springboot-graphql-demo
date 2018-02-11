@@ -21,7 +21,6 @@ test:
 
 
 script: mvn clean verify
-script: mvn checkstyle:checkstyle
 install:
 - mvn -N io.takari:maven:wrapper
 - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
